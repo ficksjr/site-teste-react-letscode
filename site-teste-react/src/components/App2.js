@@ -7,7 +7,7 @@ class App2 extends React.Component {
 
     changeName = function(event){
         this.setState({
-            nome: event.target
+            nome: event.target.value
         })
     }
 
