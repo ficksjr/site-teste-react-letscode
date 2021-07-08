@@ -3,17 +3,35 @@ import React from "react";
 class App4 extends React.Component {
     constructor(props){
         super(props);
-        this.state = {nome: undefined, txtNome: ''};
-    }
+        this.state = {
+					nome: undefined, 
+					txtNome: ''}}
 
-    changeName = (event)=>{
+    changeTxtNome = (event)=>{
         this.setState({
-            nome: event.target.value
-        })
-    }
+            txtNome: event.target.value
+        })}
+
+    persistNome = ()=>{
+        this.setState({
+            nome: this.state.txtNome
+        })}
 
     render(){
-        if (!this.state.nome){return (<>Nome: <input type="text" value={this.state.nome} onChange={this.changeName}></input></>);}
-        else {return (<><p> Olá {this.state.nome}</p></>);};};
-};
+
+        const renderForm = () => {
+            return (
+            <>
+            Nome: <input type="text" onChange={this.changeTxtNome}></input>
+            <button onClick={this.persistNome} >Salvar</button>
+            </>
+        );
+        }
+
+        const renderTxt = () => <><p>Olá {this.state.nome}</p></>;
+
+        return !this.state.nome ? renderForm() : renderTxt();
+
+    }
+}
 export default App4
