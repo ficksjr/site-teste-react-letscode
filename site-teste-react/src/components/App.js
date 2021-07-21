@@ -1,21 +1,30 @@
 import React from "react";
 
 class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <p>
-                    primeiro parágrafo
-                </p>
-                <p>
-                    segundo parágrafo
-                </p>
-                <p>
-                    {new Date().toLocaleDateString("pt-br")}
-                </p>
-            </div>
-        )
+    constructor(props) {
+      super(props);
+      console.log("constructor");
     }
-}
+    
+    componentDidMount() {
+      console.log("componentDidMount");
+    }
+    
+    componentWillUnmount() {
+      console.log("componentWillUnmount");
+    }
+    
+    render() {
+      console.log("render");
+    
+      return (
+        <ul>
+          <li><a>Home</a></li>
+          <li><a>Sobre</a></li>
+          <li><a>Contato</a></li>
+        </ul>
+      )
+    }
+  }
 
 export default App

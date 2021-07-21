@@ -7,7 +7,7 @@ import App3 from './components/App3.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App3/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
